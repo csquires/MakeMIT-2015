@@ -1,20 +1,15 @@
 var express = require('express')
 var app = express()
 
-var port = process.env.PORT || 1337;
-
 app.get('/', function (req, res) {
-	res.writeHead(200, { 'Content-Type': 'text/plain' });
-  	//res.send(req.get("venmo_challenge"));
-	//res.writeHead(200, { 'Content-Type': 'text/plain' });
-	res.send('Hello World');
-	res.end('Hello World');
-})
-app.post('/', function(req,res) {
-
+  res.send('Hello World!')
 })
 
-var server = app.listen(port, function () {
+var server = app.listen(3000, function () {
 
+  var host = server.address().address
+  var port = server.address().port
+
+  console.log('Example app listening at http://%s:%s', host, port)
 
 })

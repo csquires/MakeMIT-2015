@@ -19,9 +19,10 @@ var express = require('express')
 var app = express()
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
 //res.writeHead(200, { 'Content-Type': 'text/plain' });
 //res.write('venmo_challenge');
+res.writeHead(200, { 'Content-Type': 'text/plain' });
+res.end('Hello World\n')
 })
 app.post('/', function(req,res) {
 

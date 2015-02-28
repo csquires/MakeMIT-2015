@@ -4,8 +4,8 @@ var app = express()
 var port = process.env.PORT || 1337;
 
 app.get('/', function (req, res) {
-	 res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.send(req.query.venmo_challenge);
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.send(req.query.id);
 })
 app.post('/', function(req,res) {
 

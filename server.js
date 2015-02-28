@@ -5,7 +5,7 @@ var port = process.env.PORT || 1337;
 
 app.get('/', function (req, res) {
 	 res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end("venmo_challenge");
+  res.end(req);
 })
 app.post('/', function(req,res) {
 

@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
   	//res.send(req.get("venmo_challenge"));
 	//res.writeHead(200, { 'Content-Type': 'text/plain' });
 	res.send('Hello World');
-	res.end();
+	res.end('Hello World');
 })
 app.post('/', function(req,res) {
 

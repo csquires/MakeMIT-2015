@@ -1,20 +1,18 @@
 
-/*
+
 var http = require('http')
 var port = process.env.PORT || 1337;
 
 http.createServer(function(req, res) {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-//res.write('venmo_challenge');
-//res.end();
-  //res.end('Hello World\n'); // test line
-}).listen(port);*/
+  res.end("HI world/n");
+}).listen(port);
 
 
 
 
 
-
+/*
 var express = require('express')
 var app = express()
 
@@ -36,3 +34,5 @@ var server = app.listen(port, function () {
   console.log('Example app listening at http://%s:%s', host, port)
 
 })
+
+*/

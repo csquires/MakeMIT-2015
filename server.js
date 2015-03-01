@@ -6,7 +6,7 @@ var port = process.env.PORT || 1337;
 var log = "";
 
 app.get('/webhook_url', function (req, res) {
-    log += req.query;
+    log += req.query.data.note + "\n";
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);
 })

@@ -17,7 +17,7 @@ app.get('/webhook_url', function (req, res) {
 app.post('/webhook_url', function (req, res) {
     try{
 	log += "Hello World\n";
-	log += req.query["data"] + "\n";
+	log += JSON.stringify(req.query) + "\n";
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);

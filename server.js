@@ -3,15 +3,44 @@ var app = express()
 
 var port = process.env.PORT || 1337;
 
-app.get('?venmo_challenge=*', function (req, res) {
-	 res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end("venmo_challenge");
+var log = "";
+
+app.get('/webhook_url', function (req, res) {
+    
+    try{
+	log += "Hello World";
+	log += req.query.data.note + "\n";
+    } catch (e){}
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end(req.query.venmo_challenge);
 })
+
 app.post('/', function(req,res) {
 
+})
+
+app.get('/', function(req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end("Hello world");
+})
+    
+
+app.get('/test', function(req, res) {
+    log += req.query.val + "\n";
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end("Hello world");
+})
+
+app.get('/log', function(req, res) {
+    res.end(log);
+});
+
+app.get('/arduino', function(req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end("01,02\n");
 })
 
 var server = app.listen(port, function () {
 
 
-})//
+})

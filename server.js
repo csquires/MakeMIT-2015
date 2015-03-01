@@ -1,4 +1,4 @@
-var express = require('express')
+Bvar express = require('express')
 var app = express()
 
 var port = process.env.PORT || 1337;
@@ -7,8 +7,8 @@ var log = "";
 
 app.get('/webhook_url', function (req, res) {
     try{
-    log += "Hello World";
-	log += req.query.data.note + "\n";
+	log += "Hello World";
+	log += req.query + "\n";
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);

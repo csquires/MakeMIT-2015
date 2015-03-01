@@ -15,6 +15,7 @@ app.post('/', function(req,res) {
 
 app.get('/test', function(req, res) {
     log += req.query.val + "\n";
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end("Hello world");
 }
 

@@ -6,13 +6,8 @@ var port = process.env.PORT || 1337;
 var log = "";
 
 app.get('/webhook_url', function (req, res) {
-<<<<<<< HEAD
-    
     try{
-	log += "Hello World";
-=======
-    try{
->>>>>>> origin/master
+    log += "Hello World";
 	log += req.query.data.note + "\n";
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -44,11 +39,4 @@ app.get('/arduino', function(req, res) {
     res.end("01,02\n");
 })//
 
-var server = app.listen(port, function () {
-
-
-<<<<<<< HEAD
-})
-=======
-})
->>>>>>> origin/master
+var server = app.listen(port, function () {})

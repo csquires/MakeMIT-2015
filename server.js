@@ -44,7 +44,7 @@ app.post('/webhook_url', function (req, res) {
     req.body.data.note.substring(req.body.data.note.length -1, req.body.data.note.length)); 	
 var newstring = "$" + parseFloat(req.body.data.amount).toFixed(2) + " paid for " + 
 	    req.body.data.note.substring(0,
-    req.body.data.note.search("to") - 1) + " to be delivered to " +
+    req.body.data.note.search("to") - 1) + " to be delivered to chair " +
     req.body.data.note.substring(req.body.data.note.search("to") + 3);
 	log += newstring + "\n\n";
 /*	newstring = newstring.substring(

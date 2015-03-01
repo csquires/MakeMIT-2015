@@ -36,4 +36,4 @@ app.get('/arduino', function(req, res) {
     res.end("01,02\n");
 });
 
-var server = app.listen(3000, function () { });
+var server = app.listen(port, function () { });

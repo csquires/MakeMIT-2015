@@ -40,7 +40,8 @@ app.post('/webhook_url', function (req, res) {
     try{
 	log += "Post: ";
 	log += req.body.data.note + "\n";
-	sb.send("Table 3rd Orders", "string", "3"); 	
+	sb.send("Table 3rd Orders", "string",
+    req.body.data.note.substring(req.body.data.note.length -1, req.body.data.note.length)); 	
 var newstring = "$" + parseFloat(req.body.data.amount).toFixed(2) + " paid for " + 
 	    req.body.data.note.substring(0,
     req.body.data.note.search("to") - 1) + " to be delivered to " +

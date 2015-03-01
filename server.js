@@ -12,7 +12,7 @@ app.get('/webhook_url', function (req, res) {
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);
-})
+});
 
 app.post('/webhook_url', function (req, res) {
     try{
@@ -21,7 +21,7 @@ app.post('/webhook_url', function (req, res) {
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);
-})
+});
 
 app.put('/webhook_url', function (req, res) {
     try{
@@ -30,20 +30,20 @@ app.put('/webhook_url', function (req, res) {
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);
-})
+});
 
 
 app.get('/', function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end("Hello world");
-})
+});
     
 
 app.get('/test', function(req, res) {
     log += req.query.val + "\n";
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end("Hello world");
-})
+});
 
 app.get('/log', function(req, res) {
     res.end(log);
@@ -52,6 +52,4 @@ app.get('/log', function(req, res) {
 app.get('/arduino', function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end("01,02\n");
-})//
-
-var server = app.listen(port, function () {})
+});

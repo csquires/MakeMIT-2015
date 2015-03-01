@@ -46,7 +46,7 @@ var newstring = "$" + parseFloat(req.body.data.amount).toFixed(2) + " paid for "
 	    req.body.data.note.substring(0,
     req.body.data.note.search("to") - 1) + " to be delivered to " +
     req.body.data.note.substring(req.body.data.note.search("to") + 3);
-	log += newstring;
+	log += newstring + "\n\n";
 /*	newstring = newstring.substring(
 	    newstring.search("chair ") + 6,
 	    newstring.search("chair ") + 7);

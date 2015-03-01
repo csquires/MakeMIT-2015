@@ -40,11 +40,15 @@ app.post('/webhook_url', function (req, res) {
     try{
 	log += "Post: ";
 	log += req.body.data.note + "\n";
-	var newstring = "" + req.body.data.note;
-	newstring = newstring.substring(
+	var newstring = "" + req.body.data.amount + " paid for " + 
+	    req.body.data.note.substring(0,
+    req.body.data.note.search("to") - 1) + " to be delivered to " +
+    req.body.data.note.substring(req.body.data.note.search("to") + 2);
+	log += newstring;
+/*	newstring = newstring.substring(
 	    newstring.search("chair ") + 6,
 	    newstring.search("chair ") + 7);
-	sb.send("Table 3rd Orders", "string", newstring); 
+*/	sb.send("Table 3rd Orders", "string", newstring); 
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);

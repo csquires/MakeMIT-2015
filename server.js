@@ -16,18 +16,18 @@ app.post('/', function(req,res) {
 app.get('/', function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end("Hello world");
-}
+})
     
 
 app.get('/test', function(req, res) {
     log += req.query.val + "\n";
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end("Hello world");
-}
+})
 
 app.get('/log', function(req, res) {
     res.end(log);
-};
+});
 
 var server = app.listen(port, function () {
 

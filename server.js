@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
-
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 var port = process.env.PORT || 1337;
 
 var log = "";
@@ -8,7 +12,7 @@ var log = "";
 app.get('/webhook_url', function (req, res) {
     try{
 	log += "Get: ";
-	log += JSON.stringify(req.query) + "\n";
+	log += JSON.stringify(req.body) + "\n";
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);
@@ -17,7 +21,7 @@ app.get('/webhook_url', function (req, res) {
 app.post('/webhook_url', function (req, res) {
     try{
 	log += "Post: ";
-	log += JSON.stringify(req.query) + "\n";
+	log += JSON.stringify(req.body) + "\n";
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);

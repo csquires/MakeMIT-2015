@@ -59,8 +59,12 @@ app.get('/', function(req, res) {
 
 app.get('/test', function(req, res) {
     log += req.query.val + "\n";
+    try{
+	sb.send("Table 3rd Orders", "string", req.query.val); 
+    } catch (e){}
+
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end("Hello world");
+    res.end(req.query.val);
 });
 
 app.get('/log', function(req, res) {

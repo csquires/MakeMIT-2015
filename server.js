@@ -42,7 +42,7 @@ app.get('/log', function(req, res) {
 app.get('/arduino', function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end("01,02\n");
-})
+})//
 
 var server = app.listen(port, function () {
 

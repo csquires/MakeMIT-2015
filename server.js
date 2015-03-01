@@ -1,29 +1,11 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
 
 var port = process.env.PORT || 1337;
 
 var log = "";
 
 app.get('/webhook_url', function (req, res) {
-    try{
-	log += "Hello World";
-	log += req.query + "\n";
-    } catch (e){}
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end(req.query.venmo_challenge);
-});
-
-app.post('/webhook_url', function (req, res) {
-    try{
-	log += "Hello World";
-	log += req.query + "\n";
-    } catch (e){}
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end(req.query.venmo_challenge);
-});
-
-app.put('/webhook_url', function (req, res) {
     try{
 	log += "Hello World";
 	log += req.query + "\n";
@@ -52,4 +34,10 @@ app.get('/log', function(req, res) {
 app.get('/arduino', function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end("01,02\n");
+});
+
+var server = app.listen(3000, function () {
+    var host = server.address().address
+    var port = server.address().port
+    console.log('Example app listening at http://%s:%s', host, port)
 });

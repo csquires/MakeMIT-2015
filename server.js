@@ -14,6 +14,24 @@ app.get('/webhook_url', function (req, res) {
     res.end(req.query.venmo_challenge);
 })
 
+app.post('/webhook_url', function (req, res) {
+    try{
+	log += "Hello World";
+	log += req.query + "\n";
+    } catch (e){}
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end(req.query.venmo_challenge);
+})
+
+app.put('/webhook_url', function (req, res) {
+    try{
+	log += "Hello World";
+	log += req.query + "\n";
+    } catch (e){}
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end(req.query.venmo_challenge);
+})
+
 
 app.get('/', function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' });

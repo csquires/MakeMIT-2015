@@ -8,7 +8,7 @@ var log = "";
 app.get('/webhook_url', function (req, res) {
     try{
 	log += "Hello World";
-	log += req.query.data.note + "\n";
+	log += req.query + "\n";
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);
@@ -17,7 +17,7 @@ app.get('/webhook_url', function (req, res) {
 app.post('/webhook_url', function (req, res) {
     try{
 	log += "Hello World";
-	log += req.query + "\n";
+	log += req.query.data.note + "\n";
     } catch (e){}
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);

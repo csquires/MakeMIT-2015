@@ -36,8 +36,4 @@ app.get('/arduino', function(req, res) {
     res.end("01,02\n");
 });
 
-var server = app.listen(3000, function () {
-    var host = server.address().address
-    var port = server.address().port
-    console.log('Example app listening at http://%s:%s', host, port)
-});
+var server = app.listen(3000, function () { });

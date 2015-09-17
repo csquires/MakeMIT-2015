@@ -21,7 +21,7 @@ var sb = new Spacebrew.Client( server, name, description );
 sb.addPublish("Table 3rd Orders", "string", "0,0");
 sb.addSubscribe("Table 3rd Orders", "string");
 sb.onStringMessage = function onStringMessage( name, value ){
-    if(name=="Table 3rd ORders") {
+    if(name=="Table 3rd Orders") {
         console.log("Message from server: "+value);
     }
 }
